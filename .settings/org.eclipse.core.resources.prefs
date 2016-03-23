@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//reservation/migrations/0004_auto_20160315_2031.py=utf-8
+encoding//reservation/templates/reservation/index.html=UTF-8
+encoding//reservation/views.py=utf-8

@@ -1,0 +1,176 @@
+.grey {
+	background-color : cyan;
+}
+.small {
+	font: 9px arial, sans-serif;
+	font-weight: italic;
+	text-align: left;
+}
+.hours {
+	font: 10px arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+.weekNumber {
+	font: 14px calibri, sans-serif;
+	font-weight: bold;
+	background-color : gold;
+	text-align: center;
+}
+.day {
+	font: 10px calibri, sans-serif;
+	font-weight: bold;
+}
+.select {
+	font: 10px calibri, sans-serif;
+}
+.silver {
+	font: 9px arial, sans-serif;
+	background-color : silver;
+}
+
+.gold {
+	font: 12px calibri, sans-serif;
+	font-weight: bold;
+	background-color : gold;
+	text-align: center;
+}
+.song {
+	font: 12px calibri, sans-serif;
+	font-weight: bold;
+	background-color : lime;
+	text-align: center;
+}
+table {
+	width: 100%;
+}
+th {
+	background-color : yellow;
+}
+
+#btnPreviousWeek:hover , #btnNextWeek:hover {
+	
+	background-color : lime;
+	font-weight: bold;
+}
+
+div.center {
+	font: 11px calibri, sans-serif;
+	text-align: center;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color : lime;
+}
+
+.question_mark {
+	background:         url('/static/reservation/images/question-mark.png');
+    background-color:	white;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             64px;
+    width:              64px;
+    margin:             0 auto 0 auto;	
+}
+
+.next_week {
+    background:         url('/static/reservation/images/right-arrow.png');
+    background-color:	white;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             32px;
+    width:              64px;
+    margin:             0 auto 0 auto;	
+}
+
+.previous_week {
+	background:         url('/static/reservation/images/left-arrow.png');
+	background-color:	white;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             32px;
+    width:              64px;
+    margin:             0 auto 0 auto;		
+}
+
+.btnPreviousWeek:hover {
+	background-color:	yellow;
+}
+
+.btn_add {
+    background:         url('/static/reservation/images/add.png');
+    background-size:    16px;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             16px;
+    width:              16px;
+    margin:             0 auto 0 auto;
+}
+
+.container{
+    display:flex;
+}
+
+.slot {
+	flex-grow: 1;
+}
+
+.reservation {
+	background-color : gold;
+}
+.delete {
+	background:         url('/static/reservation/images/delete.png');
+	background-color:	yellow;
+    background-size:    16px;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             16px;
+    width:              16px;
+    margin:             0 auto 0 auto;
+}
+.StudioOne {
+	background:         url('/static/reservation/images/StudioOne.png');
+    background-size:    16px;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             16px;
+    width:              16px;
+    margin:             0 auto 0 auto;
+}
+
+.StudioTwo {
+	background:         url('/static/reservation/images/StudioTwo.png');
+    background-size:    16px;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             16px;
+    width:              16px;
+    margin:             0 auto 0 auto;
+}
+
+.StudioThree {
+	background:         url('/static/reservation/images/piano.png');
+    background-size:    16px;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             16px;
+    width:              16px;
+    margin:             0 auto 0 auto;
+}
+#helpDiv {
+	font: 11px calibri, sans-serif;
+	text-align: left;
+}
+.txtArea {
+	font: 11px calibri, sans-serif;
+	text-align: left;	
+}
+.ui-widget-header,.ui-state-default, ui-button{
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+}
