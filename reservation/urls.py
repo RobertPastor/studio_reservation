@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
 
 from . import views
 
@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^addBooking$', views.addBooking , name = 'addBooking'),
     url(r'^deleteBooking$', views.deleteBooking , name = 'deleteBooking'),
     
+    #''' use of registration HMAC '''
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]

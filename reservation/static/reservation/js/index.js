@@ -162,13 +162,20 @@ function addOneReservation(reservation, dataJson ) {
 		tableId +=  '-' + '0' + hours.toString() + 'h00';
 		// div id is the exact hours minutes as defined at reservation time
 		divId +=  '0' + hours.toString() + 'h' + date_start.getMinutes().toString();
-		strHours = '0' + hours.toString() + 'h' + date_start.getMinutes().toString();
+		if (date_start.getMinutes() < 10) {
+			strHours = '0' + hours.toString() + 'h0' + date_start.getMinutes().toString();
+		} else {
+			strHours = '0' + hours.toString() + 'h' + date_start.getMinutes().toString();
+		}
 
 	} else {
 		tableId += '-' + hours.toString() + 'h00';
 		divId += hours.toString() + 'h' + date_start.getMinutes().toString();
-		strHours = hours.toString() + 'h' + date_start.getMinutes().toString();
-
+		if (date_start.getMinutes() < 10) {
+			strHours = hours.toString() + 'h0' + date_start.getMinutes().toString();
+		} else {
+			strHours = hours.toString() + 'h' + date_start.getMinutes().toString();
+		}
 	}
 	// add a row at the end of this table
 	// add the row to each internal table
@@ -193,7 +200,12 @@ function addOneReservation(reservation, dataJson ) {
 	txtMsg += "<p>";
 	txtMsg += " réservation faite par: <mark>" + made_by  + "</mark><br />";
 	txtMsg += " date et heure: <mark>" + date_start.toString()  + "</mark><br />";
-	txtMsg += " débute à: <mark>" + hours.toString() + "h" + date_start.getMinutes().toString() + "</mark><br />";
+	if (date_start.getMinutes() < 10){
+		txtMsg += " débute à: <mark>" + hours.toString() + "h0" + date_start.getMinutes().toString() + "</mark><br />";
+	} else {
+		txtMsg += " débute à: <mark>" + hours.toString() + "h" + date_start.getMinutes().toString() + "</mark><br />";
+	}
+
 	txtMsg += " se termine à: <mark>" + date_end.getHours().toString() + "h" ;
 	if ( date_end.getMinutes() < 10 ){
 		txtMsg += "0" + date_end.getMinutes().toString() + "</mark><br />";
