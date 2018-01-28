@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login),
     url(r'^accounts/logout/$', auth_views.logout),
 
+    #''' use of registration HMAC '''
+    #url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]

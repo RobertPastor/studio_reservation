@@ -96,6 +96,16 @@ IMG.displayed {
     margin:             0 auto 0 auto;		
 }
 
+.previous_week:hover {
+	background:         url('/static/reservation/images/left-arrow.png');
+	background-color:	yellow;
+    background-repeat:  no-repeat;
+    cursor:             pointer;
+    height:             32px;
+    width:              64px;
+    margin:             0 auto 0 auto;		
+}
+
 .btnPreviousWeek:hover {
 	background-color:	yellow;
 }

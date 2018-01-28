@@ -6,36 +6,22 @@
 <script type="text/javascript" src="/static/reservation/js/jquery/jquery-2.2.1.js"></script>
 <script type="text/javascript" src="/static/reservation/js/jquery/jquery-ui.js"></script>
 <script type="text/javascript" src="/static/reservation/js/toolBox.js"></script>
+<script type="text/javascript" src="/static/reservation/js/jquery/jquery.jeditable.js" charset="utf-8"></script>
+
 <script type="text/javascript" src="/static/reservation/js/index.js"></script>
 
 <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/styles.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/jquery-ui.css' %}" />
 
+<link rel='shortcut icon' type='image/x-icon' href="{% static 'reservation/images/phare.ico' %}" />
 </head>
 
 <body>
+
 <table>
 	<tr>
 		<td><h3>Reservation de Studio</h3></td>
-		<td><div id="helpDiv" style="display: none;">
-			Cette aide est visualisée ou cachée à chaque fois que l'utilisateur clique sur le point d'interrogation.<br>
-			Le système permet de gérer les réservations de deux studios et d'une salle de piano.<br>
-			Le système s'initialise toujours sur la semaine courante.<br>
-			Utilisez les flèches <- et -> pour changer de semaine.<br>
-			...........<br>
-			Pour connaître le détail d'une réservation, cliquez sur l'image représentant le studio 1 ou 2 ou l'icone du piano.<br>
-			Les détails affichés sont cachés si l'utilisateur clique à nouveau sur l'image du studio.<br>
-			...........<br>
-			Dans une période de temps, cliquez sur le bouton (+) pour créer une nouvelle réservation.<br>
-			Choisissez un studio ou la salle de piano avant de choisir la tranche horaire de début.<br>
-			...........<br>
-			Si l'utilisateur est le créateur d'une réservation, une croix sera visualisée (à droite de la réservation) pour lui permettre de supprimer sa réservation.<br>
-			Seul le créateur d'une réservation peut supprimer cette réservation.<br>
-			...........<br>
-			Le système gère des réservations périodiques.<br>
-			Les réservations périodiques peuvent être supprimées de la même façon qu'une réservation normale.<br>
-			</div>
-		</td>
+
 		<td><div class="question_mark" type="image" onclick="toggleHelp()" title="click me"></div></td>
 	</tr>
 </table>
@@ -74,5 +60,25 @@
 </table>
 <div id="dialog-confirm" class="song"></div>
 <div class="small">Commission Musique Rungis - Mars 2016</div>
+
+<div id="helpDiv" style="display: none;">
+			Cette aide est visualisée ou cachée à chaque fois que l'utilisateur clique sur le point d'interrogation.<br>
+			Le système permet de gérer les réservations de deux studios et d'une salle de piano.<br>
+			Le système s'initialise toujours sur la semaine courante.<br>
+			Utilisez les flèches <- et -> pour changer de semaine.<br>
+			...........<br>
+			Pour connaître le détail d'une réservation, cliquez sur l'image représentant le studio 1 ou 2 ou l'icone du piano.<br>
+			Les détails affichés sont cachés si l'utilisateur clique à nouveau sur l'image du studio.<br>
+			...........<br>
+			Dans une période de temps, cliquez sur le bouton (+) pour créer une nouvelle réservation.<br>
+			Choisissez un studio ou la salle de piano avant de choisir la tranche horaire de début.<br>
+			...........<br>
+			Si l'utilisateur est le créateur d'une réservation, une croix sera visualisée (à droite de la réservation) pour lui permettre de supprimer sa réservation.<br>
+			Seul le créateur d'une réservation peut supprimer cette réservation.<br>
+			...........<br>
+			Le système gère des réservations périodiques.<br>
+			Les réservations périodiques peuvent être supprimées de la même façon qu'une réservation normale.<br>
+</div>
+		
 </body>
 </html>

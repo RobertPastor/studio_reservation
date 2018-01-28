@@ -31,6 +31,7 @@ function init() {
 	}
 	// load the first list of days
 	loadFirstListOfDays();
+
 }
 
 function loadFirstListOfDays() {
@@ -63,7 +64,18 @@ function dateIsIntheCurrentWeek(date , dataJson) {
 		var aDayOfTheWeek = list_of_days[day];
 		//alert ( aDayOfTheWeek.split(' ')[1] );
 		//alert ( new Date (aDayOfTheWeek.split(' ')[1]))
-		internalDate = new Date (aDayOfTheWeek.split(' ')[1]);
+		var frenchDate = aDayOfTheWeek.split(' ')[1];
+		var day = parseInt(frenchDate.split('-')[0]);
+		var frenchMonthStr = frenchDate.split('-')[1];
+		var month = 0;
+		$.each([ 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'], function( index, value ) {
+			if (frenchMonthStr == value ) {
+				month = index ;
+			}
+		});
+		var year = parseInt(frenchDate.split('-')[2]);
+		var internalDate = new Date ( year, month, day);
+		//console.log ( 'date is in current week= ' + internalDate + ' input= ' + aDayOfTheWeek);
 		if ( (date.getFullYear() ==  internalDate.getFullYear()) 
 				&& (date.getMonth() ==  internalDate.getMonth()) 
 				&& (date.getDate() == internalDate.getDate()) ) {
@@ -236,7 +248,7 @@ function addOneReservation(reservation, dataJson ) {
 
 	// last td contains the name of the song
 	$("#"+tableId + " tbody").find('tr:last').append($('<td>'));
-	var thirdDivContent = '<div class="song" >' + reservations[reservation].fields.song + '</div>';
+	var thirdDivContent = '<div class="song click" >' + reservations[reservation].fields.song + '</div>';
 	$("#"+tableId + " tbody").find('td:last').append(thirdDivContent);
 
 	// if the user is owner of the reservation he or she might delete it
@@ -254,6 +266,17 @@ function addOneReservation(reservation, dataJson ) {
 		$("#"+tableId + " tbody").find('td:last').append(fourthDivContent);
 
 	}
+	
+	// element with class edit
+	$('.click').editable(function(value, settings) {
+	     console.log(this);
+	     console.log(value);
+	     console.log(settings);
+	     return(value);
+	  }, {
+	     type    : 'text',
+	     submit  : 'OK',
+	 });
 }
 
 function insertReservations(dataJson) {
@@ -296,7 +319,7 @@ function insertReservations(dataJson) {
 }
 
 function toggle(id) {
-
+	// display or hide the details of a reservation
 	id = id + 'txt';
 	//$("#"+id).dialog();
 	if ($("#"+id).dialog("isOpen") == false) {
@@ -426,6 +449,10 @@ function addHoursRows() {
 		$(this).find('tr:last').append($('<td class="slot">').html(divStr));
 	});
 }
+
+/*
+ * exchange with the server make a booking
+ */
 
 function addBooking(element) {
 	var weekNumber = $("#weekNumber").text();
@@ -558,9 +585,13 @@ function add_slot(element) {
 			strStartSelect += '<select class="select" id="startSelection" onchange="startSelectionChanged()">';
 			// add empty choice in the first place
 			strStartSelect += ' <option selected></option> ;'
-			$.each( ['h00', 'h15', 'h30', 'h45'] , function(key, value) {
-				strStartSelect += ' <option value="' + (key+1).toString() +'">' + value + '</option>';
-			});
+			for (var n = 0; n < 60; n++) {
+				if (n < 10) {
+					strStartSelect += ' <option value="' +  (n).toString() +'">' + 'h0' + (n).toString() + '</option>';
+				} else {
+					strStartSelect += ' <option value="' +  (n).toString() +'">' + 'h' + (n).toString() + '</option>';
+				}
+			}
 			strStartSelect += ' </fieldset> ';
 			$("#temporaryStart").append( strStartSelect );
 
